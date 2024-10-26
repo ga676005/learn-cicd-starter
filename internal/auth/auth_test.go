@@ -90,7 +90,7 @@ func TestGetAPIKeyTableDriven(t *testing.T) {
 			name:           "malformed 1",
 			authHeader:     "ApiKey",
 			expectedOutput: "",
-			expectedError:  errors.New("force fail"),
+			expectedError:  ErrMalformedAuthorizationHeader,
 		}, {
 			name:           "malformed 2",
 			authHeader:     "123",
