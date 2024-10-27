@@ -18,8 +18,15 @@ jobs:
               with:
                 go-version: '1.23.0'
             
+            
             - name: run test
               run: go test ./... --cover
+
+            - name: Install gosec
+              run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+
+            - name: run gosec
+              run: gosec ./...
 
     style:
         name: Style
@@ -47,3 +54,10 @@ jobs:
 
             - name: run staticcheck
               run: staticcheck ./...
+
+              
+
+			
+
+
+            
