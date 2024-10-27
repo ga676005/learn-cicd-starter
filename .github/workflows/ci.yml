@@ -22,7 +22,7 @@ jobs:
             - name: run test
               run: go test ./... --cover
 
-    Style:
+    style:
         name: Style
         runs-on: ubuntu-latest
 
