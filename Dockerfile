@@ -6,4 +6,3 @@ ADD notely /usr/bin/notely
 
 CMD ["notely"]
 
-EXPOSE 8080

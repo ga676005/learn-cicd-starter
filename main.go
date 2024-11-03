@@ -35,10 +35,7 @@ func main() {
 	// if port == "" {
 	// 	log.Fatal("PORT environment variable is not set")
 	// }
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080" // fallback to 8080 if PORT env var is not set
-	}
+	port := "7777"
 
 	apiCfg := apiConfig{}
 
