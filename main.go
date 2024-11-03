@@ -44,10 +44,17 @@ func main() {
 	if dbURL == "" {
 		log.Println("DATABASE_URL environment variable is not set")
 		log.Println("Running without CRUD endpoints")
+		panic("no DATABASE_URL")
 	} else {
 		db, err := sql.Open("libsql", dbURL)
 		if err != nil {
 			log.Fatal(err)
+			panic("sql.Open error")
+		}
+		err = db.Ping()
+		if err != nil {
+			log.Fatal(err)
+			panic("db.Ping() error")
 		}
 		dbQueries := database.New(db)
 		apiCfg.DB = dbQueries
