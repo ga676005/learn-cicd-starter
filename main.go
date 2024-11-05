@@ -31,11 +31,10 @@ func main() {
 		log.Printf("warning: assuming default configuration. .env unreadable: %v", err)
 	}
 
-	// port := os.Getenv("PORT")
-	// if port == "" {
-	// 	log.Fatal("PORT environment variable is not set")
-	// }
-	port := "7777"
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "7777"
+	}
 
 	apiCfg := apiConfig{}
 
